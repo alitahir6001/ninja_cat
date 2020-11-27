@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Cat exercise</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('img').click(function(){
+				var temp = $(this).attr('src'); // creating a variable inside the function so i can change all the ninja images to the cat ones by setting the var as the attribute *got some help from the cohort on this one, thanks Corey ;)
+				
+                $(this).attr('src', $(this).attr('data-alt-src')); // "hey, take this src attribute, and replace it with THIS data-alt-src attribute."
+				
+                $(this).attr('data-alt-src', temp); // this changes it back to the orignal 'src' 
+		});
+	});
+    </script>
+</head>
+<body>
+    <h1>Ninja Cat!</h1>
+
+    <div id="ninja"> 
+        
+        <img src="img/ninja0.png"  data-alt-src='img/cat0.png'>
+        <br>
+        <img src="img/ninja1.png"  data-alt-src='img/cat1.png'>
+        <br>
+        <img src="img/ninja2.png"  data-alt-src='img/cat2.png'>
+        <br>
+        <img src="img/ninja3.png"  data-alt-src='img/cat3.png'>
+        <br>
+        <img src="img/ninja4.png"  data-alt-src='img/cat4.png'>
+
+    </div>
+<!-- line breaks are the only thing I can think of to align the images vertically without adding any css dislpay properties. -->
+    
+    
+    <!-- <div id="cat">
+        
+        <img src="img/cat0.png" alt="cat0">
+        <img src="img/cat1.png" alt="cat1">
+        <img src="img/cat2.png" alt="cat2">
+        <img src="img/cat3.png" alt="cat3">
+        <img src="img/cat4.png" alt="cat4"> Dont need these since we're adding the data-alt-src to the first container's img tags.
+
+    </div>
+</body>
+</html>
